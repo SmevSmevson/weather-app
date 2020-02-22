@@ -1,0 +1,68 @@
+.forecast {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(180deg, rgb(46, 160, 226), rgba(196, 233, 255,.5));
+}
+
+.forecast-location {
+    text-align: center;
+    font-size: 2rem;
+    color: #eee;
+
+}
+
+.forecast-scroll-section {
+    display: flex;
+    overflow: scroll;
+    scroll-snap-type: x proximity both ;
+}
+
+.forecast-item {
+    flex-shrink: 0;
+    flex-grow: 1;
+    flex-basis: 5rem;
+	padding: 1.4rem;
+	margin: 1rem;
+	background: linear-gradient(180deg, rgba(255,255,255,.4), rgba(255,255,255,.01));
+	border-radius: 1rem;
+    box-shadow: 0 0 2rem rgba(255,255,255,.1) inset, 0 .25rem .5rem rgba(0,0,55,.15);
+    color: #666;
+    text-align: center;
+    scroll-snap-align: center;
+    opacity: 0;
+    animation: displayForecasts 1s ease-in-out 1 forwards;
+    
+    &--date {
+        font-size: 1.4rem;
+    }
+
+    &--time {
+        font-size: 1rem;
+    }
+
+    &--temp {
+        margin: 1rem 0;
+        font-size: 1.4rem;
+    }
+
+    &--weather {
+        font-size: 1rem;
+    }
+
+    &--img {
+        font-size: 3rem;
+    }
+}
+
+@keyframes displayForecasts {
+    0%{
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0rem);
+    }
+}
