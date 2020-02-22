@@ -1,4 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Run using yarn start
+To view weather location for different cities add a query to the url (the default is Tokyo)
+http://localhost:3000/?city=Tokyo
 
 ## Available Scripts
 
