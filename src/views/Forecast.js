@@ -24,7 +24,7 @@ function Dashboard(props) {
 
     return (
         <div className="forecast">
-            <h2 className="forecast-location">{forecast.city ? forecast.city.name : 'loading...'}</h2>
+            <h2 className="forecast-location">{forecast.city ? forecast.city.name : forecast.cod && forecast.cod != "200"? 'Can\'t find that city, please try again': 'loading...'}</h2>
             <div className="forecast-scroll-section">
                 {forecast.list ? forecast.list.map(({dt_txt, main, weather}, index) => {
                     return (
